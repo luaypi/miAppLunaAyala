@@ -1,0 +1,28 @@
+
+.row {
+    gap: 10px;
+    justify-content: center;
+  }
+a {
+  text-decoration: none;
+  font-size: 12px;
+}
+.texto-boton {
+  cursor:pointer;
+  color:black;
+}
+
+@media (max-width: 576px) {
+
+    h1 {
+      text-align: center;
+      font-size: 2em;
+    }
+    .row {
+      width: 60vw;
+      margin: 0 auto;
+    }
+  }
+
+
+  

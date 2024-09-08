@@ -1,0 +1,30 @@
+<div class="container mt-5">
+    <h1 class="card-title text-center">Listado de usuarios</h1> 
+    <div class="row">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 align-items-center" *ngFor="let user of users">
+            <div class="card h-100 text-center justify-content-center align-items-center">
+                <div class="card-body">
+                    <img src="{{user.avatar}}" class="img-fluid rounded-circle" style="width: 80%;">
+                    <p class="card-title mt-2">{{user.first_name}} {{user.last_name}}</p>
+                    <div class="d-flex justify-content-center align-items-center mt-2" style="gap: 20px;">
+                        <a [routerLink]="['/user',user.id]" class="">
+                            <img src="buscar.png" alt="" class="img-fluid m-2" style="width: 32px;">
+                            <br>
+                            <p class="texto-boton">Ver detalle</p>
+                        </a>
+                        <a [routerLink]="['/updateuser',user.id]" class="">
+                            <img src="boton-editar.png" alt="" class="img-fluid m-2" style="width: 32px;">
+                            <br>
+                            <p class="texto-boton">Actualizar</p>
+                        </a>
+                        <a class="" (click)="confirmDelete(user.id)">
+                            <img src="delete.png" alt="" class="img-fluid m-2" style="width: 32px;cursor:pointer">
+                            <br>
+                            <p class="texto-boton">Borrar</p>
+                        </a>
+                    </div>    
+                </div>
+            </div> 
+        </div>
+    </div>
+</div>

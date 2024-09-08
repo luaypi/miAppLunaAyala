@@ -1,0 +1,51 @@
+<div class="container mt-5" *ngIf="user">
+  <h1 class="text-center">Detalles del usuario</h1>
+  <div class="card mx-auto" style="width: 70vw;">
+    <div
+      class="detalles-info"
+      style="display: flex; flex-direction: row; justify-content: space-evenly; gap: 10vw; place-items: center;"
+    >
+      <img
+        src="{{ user.avatar }}"
+        alt=""
+        class="card-img-top img-fluid rounded-circle"
+        *ngIf="user"
+        style="width: 18vw; justify-content: right; align-items: right;"
+      />
+      <div class="card-body" style="width: 40vw;">
+        <h5 class="card-title">Nombre de usuario: {{ user.first_name }}</h5>
+        <h5 class="card-title">Apellido de usuario: {{ user.last_name }}</h5>
+        <p>{{ user.first_name }} {{ user.last_name }}: username</p>
+        <p class="card-text">Email: {{ user.email }}</p>
+        <div class="d-flex justity-content-between">
+          <!-- Tiene que saltar un alert cuando clicas en el botón de eliminar. Si le das a aceptar se produce el envío a la API
+                 y si das a cancelar, vuelves a la pantalla usuario  -->
+          <a class="" (click)="confirmDelete(user.id)">
+            <img
+              src="delete.png"
+              alt=""
+              class="img-fluid m-3"
+              style="width: 30px; cursor: pointer"
+            />
+          </a>
+          <a [routerLink]="['/updateuser', user.id]" class="">
+            <img
+              src="boton-editar.png"
+              alt=""
+              class="img-fluid m-3"
+              style="width: 30px"
+            />
+          </a>
+          <a [routerLink]="['/home']" class="">
+            <img
+              src="volver.png"
+              alt=""
+              class="img-fluid m-3"
+              style="width: 30px"
+            />
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
